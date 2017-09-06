@@ -1,14 +1,22 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Camera Test
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
+  <button  small ion-button (click)='realPicture();'>Take Real Picture </button><button small ion-button (click)='dummyPicture();'>Take Dummy Picture</button><button small ion-button color="danger" (click)='reset();'>Clear</button>
+
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+  <ion-row wrap>
+      <ion-col col-6 col-md-6 col-lg-4 col-xl-3 *ngFor="let image of images">
+        <ion-card>
+          <img src="{{image}}" />
+        </ion-card>
+      </ion-col>
+  </ion-row>
+
 </ion-content>
